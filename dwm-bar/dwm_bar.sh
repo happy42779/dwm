@@ -28,28 +28,28 @@ export SEP2="]"
 #. "$DIR/bar-functions/dwm_cmus.sh"
 #. "$DIR/bar-functions/dwm_mpc.sh"
 #. "$DIR/bar-functions/dwm_spotify.sh"
-#. "$DIR/bar-functions/dwm_resources.sh"
-#. "$DIR/bar-functions/dwm_battery.sh"
+. "$DIR/bar-functions/dwm_resources.sh"
+. "$DIR/bar-functions/dwm_battery.sh"
 #. "$DIR/bar-functions/dwm_mail.sh"
-#. "$DIR/bar-functions/dwm_backlight.sh"
-#. "$DIR/bar-functions/dwm_alsa.sh"
-#. "$DIR/bar-functions/dwm_pulse.sh"
-#. "$DIR/bar-functions/dwm_weather.sh"
+. "$DIR/bar-functions/dwm_backlight.sh"
+. "$DIR/bar-functions/dwm_alsa.sh"
+. "$DIR/bar-functions/dwm_pulse.sh"
+. "$DIR/bar-functions/dwm_weather.sh"
 #. "$DIR/bar-functions/dwm_vpn.sh"
-#. "$DIR/bar-functions/dwm_networkmanager.sh"
-#. "$DIR/bar-functions/dwm_keyboard.sh"
+. "$DIR/bar-functions/dwm_networkmanager.sh"
+. "$DIR/bar-functions/dwm_keyboard.sh"
 #. "$DIR/bar-functions/dwm_ccurse.sh"
-#. "$DIR/bar-functions/dwm_date.sh"
+. "$DIR/bar-functions/dwm_date.sh"
 #. "$DIR/bar-functions/dwm_connman.sh"
-#. "$DIR/bar-functions/dwm_loadavg.sh"
+. "$DIR/bar-functions/dwm_loadavg.sh"
 #. "$DIR/bar-functions/dwm_currency.sh"
 
 parallelize() {
     while true
     do
-        printf "Running parallel processes\n"
-        #dwm_weather &
-        #dwm_networkmanager &
+        #printf "Running parallel processes\n"
+        dwm_weather &
+        dwm_networkmanager &
         sleep 5
     done
 }
@@ -67,19 +67,19 @@ do
     #upperbar="$upperbar$(dwm_cmus)"
     #upperbar="$upperbar$(dwm_mpc)"
     #upperbar="$upperbar$(dwm_spotify)"
-    #upperbar="$upperbar$(dwm_resources)"
-    #upperbar="$upperbar$(dwm_battery)"
+    upperbar="$upperbar$(dwm_resources)"
+    upperbar="$upperbar$(dwm_battery)"
     #upperbar="$upperbar$(dwm_mail)"
-    #upperbar="$upperbar$(dwm_backlight)"
-    #upperbar="$upperbar$(dwm_alsa)"
-    #upperbar="$upperbar$(dwm_pulse)"
-    #upperbar="$upperbar${__DWM_BAR_WEATHER__}"
+    upperbar="$upperbar$(dwm_backlight)"
+    upperbar="$upperbar$(dwm_alsa)"
+    upperbar="$upperbar$(dwm_pulse)"
+    upperbar="$upperbar${__DWM_BAR_WEATHER__}"
     #upperbar="$upperbar$(dwm_vpn)"
-    #upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
-    #upperbar="$upperbar$(dwm_keyboard)"
+    upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
+    upperbar="$upperbar$(dwm_keyboard)"
     #upperbar="$upperbar$(dwm_ccurse)"
-    #upperbar="$upperbar$(dwm_date)"
-    #upperbar="$upperbar$(dwm_loadavg)"
+    upperbar="$upperbar$(dwm_date)"
+    upperbar="$upperbar$(dwm_loadavg)"
     #upperbar="$upperbar$(dwm_currency)"
    
     # Append results of each func one by one to the lowerbar string
