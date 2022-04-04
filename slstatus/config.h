@@ -80,7 +80,7 @@ static const struct arg args[] = {
 
 	{ battery_perc, " %s%%|", "BAT0" },
 	{ cpu_perc, " %s%%|", NULL },
-	{ temp, " %.2s 糖|", "/sys/class/hwmon/hwmon2/temp1_input" },
+	{ temp, " %.2s C|", "/sys/class/hwmon/hwmon3/temp1_input" },
 	{ ram_used, " %s/", NULL },
 	{ ram_total, "%s|", NULL },
 	{ alsa_vol_perc, "奔 %s%|", "Master" },
