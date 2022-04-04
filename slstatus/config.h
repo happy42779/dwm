@@ -12,6 +12,8 @@ static const char unknown_str[] = "n/a";
 /*
  * function            description                     argument (example)
  *
+ * alsa_vol_perc	   ALSA volume in percent		   Mixer name (Master)
+ *
  * battery_perc        battery percentage              battery name (BAT0)
  *                                                     NULL on OpenBSD/FreeBSD
  * battery_state       battery charging state          battery name (BAT0)
@@ -65,13 +67,22 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ disk_perc, "[ %.5s%%]", "/"},
-	{ wifi_essid,"[%s ", "wlan0" },
-	{ wifi_perc, "%3s%%]", "wlan0" },
-	{ battery_perc, "[BAT %3s%%]", "BAT0" },
-	{ cpu_perc, "[CPU %3s%%]", NULL },
-	{ temp, "[TEMP %sC]", "/sys/class/thermal/cooling_device0" },
-	{ ram_perc, "[RAM %2s%%]", NULL },
-	{ vol_perc, "[VOL %s%]", "/dev/mixer1" },
+	{ disk_free, " %s|", "/"},
+	//{ wifi_essid," %s|", "wlan0" },
+	//{ wifi_perc, "%3s%%|", "wlan0" },
+	//{ netspeed_tx, " [ %sKB/s", "wlan0"},
+	//{ netspeed_rx, " %s]", "wlan0"},
+
+	//{ netspeed_rx, " %sB/s|", "wlan0"},
+	//{ netspeed_rx, " %sB/s|", "enp2s0"},
+	//{ netspeed_tx, " [ %sKB/s", "enp2s0"},
+	//{ netspeed_rx, " %s]", "enp2s0"},
+
+	{ battery_perc, " %s%%|", "BAT0" },
+	{ cpu_perc, " %s%%|", NULL },
+	{ temp, " %.2s 糖|", "/sys/class/hwmon/hwmon2/temp1_input" },
+	{ ram_used, " %s/", NULL },
+	{ ram_total, "%s|", NULL },
+	{ alsa_vol_perc, "奔 %s%|", "Master" },
 	{ datetime, "%s",           "%F %T" },
 };
